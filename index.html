@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/ico.png" type="image/png">
+  <title>Equilíbrio Orquestral</title>
+  <link rel="stylesheet" href="style.css">
+  
+
+</head>
+<body>
+  <h1 class="titulo" data-texto="Equilíbrio orquestral">Equilíbrio Orquestral</h1>
+
+  <div class="grupo-formulario">
+    <label for="instrumento" class="label-negrito">Instrumento:</label>
+    <select id="instrumento">
+      <option value="" disabled selected>-- Selecione --</option>
+    </select>
+    <button onclick="adicionarInstrumento()">Adicionar</button>
+  </div>
+
+  <br><br>
+
+   <div class="remover-area" id="area-instrumentos" style="display: none;">
+        <p><strong>Instrumentos cadastrados:</strong></p>
+        <div id="lista-instrumentos"></div>
+        <button id="botao-remover" onclick="removerSelecionados()" style="display: none;">
+            Apagar
+        </button>
+   </div>
+
+  <div id="estado-equilibrio" class="estado"></div>
+
+  <div class="sugestao" id="sugestao"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

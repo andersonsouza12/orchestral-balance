@@ -1,0 +1,226 @@
+@import url('link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet');
+
+:root {
+  --body-color:  #f4f4f4;
+  --button-color-hover-text:  #e0e0e0;
+  --button-color-hover-background:  #82401b;
+
+  --background-color-suggestion:  #f5c395d7;
+  --border-left-color-suggestion:  #82401b;
+  --background-color-list-instrumento: #c1996f81;
+
+
+  --estado-acaminho-orquestra-background: #f7c912d5;
+  --estado-desequilibrio-orquestra-background: #cf4738cc;
+  --estado-equilibrado-orquestra-background: #3cca77d3;
+
+  --color-checkbox: #82401b;
+
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  color: #000000;
+  
+  /* Fundo com imagem responsiva */
+  background-image: url('/img/body.jpeg'); /* substitua pelo caminho da sua imagem */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Cor de fundo de fallback (caso a imagem não carregue) */
+  background-color:var(--body-color);
+
+  /* Garante que o body ocupe pelo menos a altura total da tela */
+  min-height: 100vh;
+}
+
+head{
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.grupo-formulario {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Evita quebra feia em telas pequenas */
+  gap: 0.5rem; /* Espaço entre os elementos */
+  margin-bottom: 1rem;
+}
+
+.grupo-formulario label {
+  margin-bottom: 0; /* Remove margem padrão se existir */
+}
+
+
+.titulo {
+  font-size: 3rem;
+  font-weight: 700;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.titulo span {
+  display: inline-block;
+  transform: translateY(-150%);
+  animation: cair 0.6s forwards, onda 0.5s forwards;
+  animation-delay: calc(var(--i) * 0.1s), calc(var(--i) * 0.1s + 0.6s);
+}
+
+select option:first-child {
+  text-align: center;
+}
+
+.label-negrito{
+  font-weight: bold;
+}
+
+
+.remover-area {
+  background-color: var(--background-color-list-instrumento); /* fundo branco com 50% de opacidade */
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  display: none; /* Oculta por padrão ao carregar a página */
+}
+
+
+.instrumento-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--color-checkbox);
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: var(--body-color);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Quando estiver marcado */
+.instrumento-checkbox:checked {
+  background-color: var(--color-checkbox);
+  border-color: var(--color-checkbox);
+}
+
+/* Checkmark visual com ::after */
+.instrumento-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--body-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+select, button {
+  padding: 0.2rem;
+  margin-right: 0.5rem;
+  
+  
+}
+
+select {
+  border-radius: 5px;
+}
+
+
+select:hover, button:hover {
+  background-color:var(--button-color-hover-text);
+  cursor: pointer;
+}
+
+button {
+  border: 1px solid rgba(0, 0, 0, 0.945); /* borda sutil e suave */;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #f5c395;
+  padding: 0.4rem 0.8rem;
+}
+
+
+button:hover {
+  background-color:var(--button-color-hover-background);
+  color: var(--button-color-hover-text);
+}
+
+
+.alunos {
+  margin-top: 1rem;
+}
+
+.familia {
+  font-weight: bold;
+}
+
+
+.sugestao {
+  background-color:var(--background-color-suggestion);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 5px solid var(--border-left-color-suggestion);
+  border-radius: 5px;
+  display: none; /* Oculta por padrão ao carregar a página */
+}
+
+/* Seção do estado da orquestra */
+.estado {
+  padding: 1rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+
+/* Cores de acordo com o estado */
+.equilibrada {
+  background-color: var(--estado-equilibrado-orquestra-background);
+}
+
+.caminho {
+  background-color: var(--estado-acaminho-orquestra-background);
+  color: #333; /* melhor contraste para o texto no amarelo */
+}
+
+.desequilibrada {
+  background-color: var(--estado-desequilibrio-orquestra-background);
+}
+
+
+
+@keyframes cair {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes onda {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
