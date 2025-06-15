@@ -1,5 +1,6 @@
 # Equilíbrio Orquestral
 
+![Prévia do Site](img/previa.png)
 
 ##  Por que esse projeto foi criado?
 
