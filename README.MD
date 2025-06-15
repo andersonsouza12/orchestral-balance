@@ -35,7 +35,7 @@ Este sistema ajuda a visualizar rapidamente o impacto de novos ingressantes na f
 Se você já tem o Git instalado, basta abrir o terminal e rodar:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/andersonsouza12/orchestral-balance.git
 ```
 
 Depois entre na pasta clonada:
